@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:titled_navigation_bar/titled_navigation_bar.dart';
+
 void main() => runApp( MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,14 +20,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-/*
-  final List<TitledBottomNavigationBarItem> items = [
-    TitledBottomNavigationBarItem(title: 'Home', icon: Icons.home),
-    TitledBottomNavigationBarItem(title: 'Search', icon: Icons.search),
-    TitledBottomNavigationBarItem(title: 'Bag', icon: Icons.card_travel),
-    TitledBottomNavigationBarItem(title: 'Orders', icon: Icons.shopping_cart),
-    TitledBottomNavigationBarItem(title: 'Profile', icon: Icons.person_outline),
-  ];*/
+
+  final List<TitledNavigationBarItem> items = [
+    TitledNavigationBarItem(title: 'Home', icon: Icons.home),
+    TitledNavigationBarItem(title: 'Search', icon: Icons.search),
+    TitledNavigationBarItem(title: 'Bag', icon: Icons.card_travel),
+    TitledNavigationBarItem(title: 'Orders', icon: Icons.shopping_cart),
+    TitledNavigationBarItem(title: 'Profile', icon: Icons.person_outline),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +35,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Titled Bottom Bar"),
       ),
-//      bottomNavigationBar: TitledBottomNavigationBar(
-//        items: items,
-//      ),
+      bottomNavigationBar: TitledBottomNavigationBar(
+        items: items,
+      ),
     );
   }
 }
