@@ -32,7 +32,7 @@ dependencies:
 
 ````Dart
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
-``
+```
 
 ### Adding the widget
 
