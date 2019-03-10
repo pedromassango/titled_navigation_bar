@@ -5,7 +5,7 @@ A beautiful and simple bottom navigation bar with smooth animation on click.
 
 ## Preview
 
-![Example Gif](preview.gif "TitledNavigationBar")
+![Example Gif](screenshots/preview.gif "TitledNavigationBar")
 
 ## Getting Started
 
