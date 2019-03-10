@@ -7,16 +7,15 @@ class TitledBottomNavigationBar extends StatefulWidget {
   final ValueChanged onTap;
   final List<TitledNavigationBarItem> items;
 
-  TitledBottomNavigationBar({
-    Key key,
-    @required this.onTap,
-    @required this.items,
-    this.iconColor,
-    this.indicatorColor
-  }) : super(key: key){
-
+  TitledBottomNavigationBar(
+      {Key key,
+      @required this.onTap,
+      @required this.items,
+      this.iconColor,
+      this.indicatorColor})
+      : super(key: key) {
     assert(items != null);
-    assert(items.length == 4);
+    assert(items.length >= 2 && items.length <= 5);
     assert(onTap != null);
   }
 
@@ -26,7 +25,6 @@ class TitledBottomNavigationBar extends StatefulWidget {
 
 class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
     with SingleTickerProviderStateMixin {
-
   List<TitledNavigationBarItem> get items => widget.items;
   int selectedIndex = 0;
   static const double BAR_HEIGHT = 60;
@@ -80,7 +78,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
               curve: Curves.linear,
               duration: duration,
               child: Container(
-                color: widget.indicatorColor ?? Colors.black,
+                color:
+                    widget.indicatorColor ?? widget.iconColor ?? Colors.black,
                 width: width / items.length,
                 height: INDICATOR_HEIGHT,
               ),
@@ -114,7 +113,10 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
           AnimatedAlign(
             duration: duration,
             alignment: isSelected ? Alignment.center : Alignment(0, 2.6),
-            child: Icon(item.icon),
+            child: Icon(
+              item.icon,
+              color: widget.iconColor ?? widget.indicatorColor ?? Colors.black,
+            ),
           ),
         ],
       ),

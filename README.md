@@ -13,9 +13,9 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 
 ## Info
 
-- [x] Change icon color
-- [x] Change indicator color
-- [x] Support for up to five items
+- [x] Custom icon color
+- [x] Custom indicator color
+- [x] Support from two to five items
 
 ## Getting Started
 
@@ -39,12 +39,15 @@ import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 
 ````Dart
 bottomNavigationBar: TitledBottomNavigationBar(
-   items: [
-       TitledNavigationBarItem(title: 'Home', icon: Icons.home),
-       TitledNavigationBarItem(title: 'Search', icon: Icons.search),
-       TitledNavigationBarItem(title: 'Bag', icon: Icons.card_travel),
-       TitledNavigationBarItem(title: 'Orders', icon: Icons.shopping_cart),
-       TitledNavigationBarItem(title: 'Profile', icon: Icons.person_outline),
-   ],
+  onTap: (index){
+    print("Selected Index: $index");
+  },
+  items: [
+      TitledNavigationBarItem(title: 'Home', icon: Icons.home),
+      TitledNavigationBarItem(title: 'Search', icon: Icons.search),
+      TitledNavigationBarItem(title: 'Bag', icon: Icons.card_travel),
+      TitledNavigationBarItem(title: 'Orders', icon: Icons.shopping_cart),
+      TitledNavigationBarItem(title: 'Profile', icon: Icons.person_outline),
+  ]
 )
 ```
