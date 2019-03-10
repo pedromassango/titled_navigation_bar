@@ -11,15 +11,16 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 
 ![Example Gif](screenshots/preview.gif "TitledNavigationBar")
 
-## Info
+## Package overview
 
 - [x] Custom icon color
 - [x] Custom indicator color
 - [x] Support from two to five items
 
 ## Getting Started
+Follow these steps to use this library
 
-Add the plugin:
+### Add the plugin:
 
 ```yaml
 dependencies:
@@ -27,9 +28,7 @@ dependencies:
   titled_navigation_bar: ^1.0.0
 ```
 
-## Basic Usage
-
-### Import this class
+### Basic Usage
 
 ````Dart
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
