@@ -24,7 +24,7 @@ Add the plugin:
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^0.0.1
+  titled_navigation_bar: ^1.0.0
 ```
 
 ## Basic Usage
