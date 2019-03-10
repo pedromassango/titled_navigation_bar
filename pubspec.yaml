@@ -1,5 +1,5 @@
 name: titled_navigation_bar
-description: A beautiful bottom navigation bar for your Flutter app.
+description: A beautiful, clean and simple bottom navigation bar with smooth animation on click. This package is high customizable, read more bellow.
 version: 0.9.1
 author: Pedro Massango <pedromassango.developer@gmail.com>
 homepage: https://github.com/pedromassango/titled_navigation_bar

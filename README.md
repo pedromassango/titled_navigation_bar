@@ -1,11 +1,21 @@
 # Titled Bottom Navigation Bar
 
-A beautiful and simple bottom navigation bar with smooth animation on click.
+A beautiful, clean and simple bottom navigation bar with smooth animation on click. This package is high customizable, read more bellow.
 
+
+You can see the source code of this lib inside the [/lib](https://github.com/pedromassango/titled_navigation_bar/tree/master/lib) folder.
+
+### Show some :heart: and star the repo to support this project
 
 ## Preview
 
 ![Example Gif](screenshots/preview.gif "TitledNavigationBar")
+
+## Info
+
+- [x] Change icon color
+- [x] Change indicator color
+- [x] Support for up to five items
 
 ## Getting Started
 
@@ -19,7 +29,13 @@ dependencies:
 
 ## Basic Usage
 
-Adding the widget
+### Import this class
+
+````Dart
+import 'package:titled_navigation_bar/titled_navigation_bar.dart';
+``
+
+### Adding the widget
 
 ````Dart
 bottomNavigationBar: TitledBottomNavigationBar(
