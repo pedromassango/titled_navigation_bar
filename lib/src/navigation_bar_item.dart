@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TitledNavigationBarItem{
+class TitledNavigationBarItem {
   final String title;
   final IconData icon;
 
