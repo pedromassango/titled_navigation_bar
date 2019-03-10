@@ -28,10 +28,9 @@ dependencies:
   titled_navigation_bar: ^1.0.0
 ```
 
-### Basic Usage
-
-````Dart
-import 'package:titled_navigation_bar/titled_navigation_bar.dart';
+### Import the package
+```Dart
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 ```
 
 ### Adding the widget
