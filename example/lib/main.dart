@@ -36,7 +36,11 @@ class _HomePageState extends State<HomePage> {
         title: Text("Titled Bottom Bar"),
       ),
       bottomNavigationBar: TitledBottomNavigationBar(
+        onTap: (index){
+          print("Selected Index: $index");
+        },
         items: items,
+        indicatorColor: Colors.blue,
       ),
     );
   }

@@ -134,7 +134,7 @@ packages:
       name: titled_navigation_bar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1"
+    version: "0.9.1"
   typed_data:
     dependency: transitive
     description:
