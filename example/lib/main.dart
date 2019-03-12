@@ -56,6 +56,8 @@ class _HomePageState extends State<HomePage> {
         },
         reverse: navBarMode,
         items: items,
+        activeColor: Colors.red,
+        inactiveColor: Colors.blueGrey,
       ),
     );
   }
