@@ -1,3 +1,11 @@
+## 2.0.0
+
+* option to show title/icon on selected item (added reverse mode)
+
+## 1.5.0
+
+* Documentation improved
+
 ## 1.0.0
 
 * Good first version (v1)
