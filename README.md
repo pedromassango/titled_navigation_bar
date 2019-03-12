@@ -42,7 +42,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 ### Adding the widget
 
-````Dart
+```Dart
 bottomNavigationBar: TitledBottomNavigationBar(
   onTap: (index){
     print("Selected Index: $index");
