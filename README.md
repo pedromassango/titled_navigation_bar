@@ -12,7 +12,7 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 ![Default Mode Gif](screenshots/preview.gif "TitledNavigationBar")
 
 
-## Preview (reverse mode)
+## Preview (with reverse mode)
 
 ![Reversed Mode Gif](screenshots/reverse.gif "TitledNavigationBar")
 
@@ -32,7 +32,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^1.5.0
+  titled_navigation_bar: ^2.0.0
 ```
 
 ### Import the package
