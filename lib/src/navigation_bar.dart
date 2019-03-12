@@ -11,12 +11,12 @@ class TitledBottomNavigationBar extends StatefulWidget {
 
   TitledBottomNavigationBar(
       {Key key,
-        this.reverse = false,
-        @required this.onTap,
-        @required this.items,
-        this.activeColor,
-        this.inactiveColor,
-        this.indicatorColor})
+      this.reverse = false,
+      @required this.onTap,
+      @required this.items,
+      this.activeColor,
+      this.inactiveColor,
+      this.indicatorColor})
       : super(key: key) {
     assert(items != null);
     assert(items.length >= 2 && items.length <= 5);
@@ -27,10 +27,8 @@ class TitledBottomNavigationBar extends StatefulWidget {
   State createState() => _TitledBottomNavigationBarState();
 }
 
-class _TitledBottomNavigationBarState
-    extends State<TitledBottomNavigationBar>
+class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
     with SingleTickerProviderStateMixin {
-
   static const double BAR_HEIGHT = 60;
   static const double INDICATOR_HEIGHT = 2;
 
@@ -75,8 +73,8 @@ class _TitledBottomNavigationBarState
                 var index = items.indexOf(item);
                 return GestureDetector(
                   onTap: () => setState(() {
-                    _select(index);
-                  }),
+                        _select(index);
+                      }),
                   child: _buildItemWidget(item, index == selectedIndex),
                 );
               }).toList(),
@@ -90,8 +88,7 @@ class _TitledBottomNavigationBarState
               curve: Curves.linear,
               duration: duration,
               child: Container(
-                color:
-                widget.indicatorColor ?? activeColor,
+                color: widget.indicatorColor ?? activeColor,
                 width: width / items.length,
                 height: INDICATOR_HEIGHT,
               ),
@@ -108,18 +105,17 @@ class _TitledBottomNavigationBarState
     indicatorAlignX = -1 + (2 / (items.length - 1) * index);
   }
 
-  Widget _buildIcon(TitledNavigationBarItem item){
-    return  Icon(
+  Widget _buildIcon(TitledNavigationBarItem item) {
+    return Icon(
       item.icon,
       color: reverse ? widget.inactiveColor : activeColor,
     );
   }
 
-  Widget _buildText(TitledNavigationBarItem item){
-    return Text(item.title,
-      style: TextStyle(
-          color: reverse ? activeColor : widget.inactiveColor
-      ),
+  Widget _buildText(TitledNavigationBarItem item) {
+    return Text(
+      item.title,
+      style: TextStyle(color: reverse ? activeColor : widget.inactiveColor),
     );
   }
 
