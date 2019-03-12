@@ -56,9 +56,6 @@ class _HomePageState extends State<HomePage> {
         },
         reverse: navBarMode,
         items: items,
-        indicatorColor: Colors.blue,
-        activeColor: Colors.blue,
-        inactiveColor: Colors.blueGrey,
       ),
     );
   }
@@ -66,9 +63,9 @@ class _HomePageState extends State<HomePage> {
 
 class TitledBottomNavigationBar extends StatefulWidget {
   final bool reverse;
-  final Color indicatorColor;
   final Color activeColor;
   final Color inactiveColor;
+  final Color indicatorColor;
   final ValueChanged<int> onTap;
   final List<TitledNavigationBarItem> items;
 
@@ -104,6 +101,7 @@ class _TitledBottomNavigationBarState
   int selectedIndex = 0;
   double indicatorAlignX = 0;
 
+  Color activeColor;
   Duration duration = Duration(milliseconds: 270);
 
   @override
@@ -117,6 +115,8 @@ class _TitledBottomNavigationBarState
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
+    activeColor = widget.activeColor ?? Theme.of(context).indicatorColor;
+
     return Container(
       key: widget.key,
       height: BAR_HEIGHT,
@@ -151,7 +151,7 @@ class _TitledBottomNavigationBarState
               duration: duration,
               child: Container(
                 color:
-                widget.indicatorColor ?? widget.activeColor ?? Colors.black,
+                widget.indicatorColor ?? activeColor,
                 width: width / items.length,
                 height: INDICATOR_HEIGHT,
               ),
@@ -171,7 +171,7 @@ class _TitledBottomNavigationBarState
   Widget _buildIcon(TitledNavigationBarItem item){
     return  Icon(
       item.icon,
-      color: reverse ? widget.inactiveColor : widget.activeColor,
+      color: reverse ? widget.inactiveColor : activeColor,
     );
   }
 
@@ -180,7 +180,7 @@ class _TitledBottomNavigationBarState
   Widget _buildText(TitledNavigationBarItem item){
     return Text(item.title,
       style: TextStyle(
-        color: reverse ? widget.activeColor : widget.inactiveColor
+        color: reverse ? activeColor : widget.inactiveColor
       ),
     );
   }

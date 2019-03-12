@@ -17,7 +17,7 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 ![Reversed Mode Gif](screenshots/reverse.gif "TitledNavigationBar")
 
 
-## Info
+## Package overview
 
 - [x] Custom icon color
 - [x] Custom indicator color
@@ -25,8 +25,9 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 - [x] Reverse mode (show selected item as icon or title)
 
 ## Getting Started
+Follow these steps to use this library
 
-Add the plugin:
+### Add the plugin:
 
 ```yaml
 dependencies:
@@ -34,13 +35,10 @@ dependencies:
   titled_navigation_bar: ^1.5.0
 ```
 
-## Basic Usage
-
-### Import this class
-
-````Dart
-import 'package:titled_navigation_bar/titled_navigation_bar.dart';
-``
+### Import the package
+```Dart
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+```
 
 ### Adding the widget
 
@@ -58,7 +56,6 @@ bottomNavigationBar: TitledBottomNavigationBar(
   ]
 )
 ```
-
 
 ## Customization (Optional)
 
