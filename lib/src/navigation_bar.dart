@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:titled_navigation_bar/src/navigation_bar_item.dart';
 
 class TitledBottomNavigationBar extends StatefulWidget {
-  final Color iconColor;
+  final bool reverse;
+  final Color activeColor;
+  final Color inactiveColor;
   final Color indicatorColor;
-  final ValueChanged onTap;
+  final ValueChanged<int> onTap;
   final List<TitledNavigationBarItem> items;
 
   TitledBottomNavigationBar(
       {Key key,
-      @required this.onTap,
-      @required this.items,
-      this.iconColor,
-      this.indicatorColor})
+        this.reverse = false,
+        @required this.onTap,
+        @required this.items,
+        this.activeColor,
+        this.inactiveColor,
+        this.indicatorColor})
       : super(key: key) {
     assert(items != null);
     assert(items.length >= 2 && items.length <= 5);
@@ -23,16 +27,22 @@ class TitledBottomNavigationBar extends StatefulWidget {
   State createState() => _TitledBottomNavigationBarState();
 }
 
-class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
+class _TitledBottomNavigationBarState
+    extends State<TitledBottomNavigationBar>
     with SingleTickerProviderStateMixin {
-  List<TitledNavigationBarItem> get items => widget.items;
-  int selectedIndex = 0;
+
   static const double BAR_HEIGHT = 60;
   static const double INDICATOR_HEIGHT = 2;
+
+  bool get reverse => widget.reverse;
+  List<TitledNavigationBarItem> get items => widget.items;
+
   double width = 0;
+  int selectedIndex = 0;
   double indicatorAlignX = 0;
 
-  Duration duration = Duration(milliseconds: 270);
+  Color activeColor;
+  Duration duration = Duration(milliseconds: 250);
 
   @override
   void initState() {
@@ -45,6 +55,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
+    activeColor = widget.activeColor ?? Theme.of(context).indicatorColor;
+
     return Container(
       key: widget.key,
       height: BAR_HEIGHT,
@@ -63,8 +75,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
                 var index = items.indexOf(item);
                 return GestureDetector(
                   onTap: () => setState(() {
-                        _select(index);
-                      }),
+                    _select(index);
+                  }),
                   child: _buildItemWidget(item, index == selectedIndex),
                 );
               }).toList(),
@@ -79,7 +91,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
               duration: duration,
               child: Container(
                 color:
-                    widget.indicatorColor ?? widget.iconColor ?? Colors.black,
+                widget.indicatorColor ?? activeColor,
                 width: width / items.length,
                 height: INDICATOR_HEIGHT,
               ),
@@ -96,6 +108,21 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
     indicatorAlignX = -1 + (2 / (items.length - 1) * index);
   }
 
+  Widget _buildIcon(TitledNavigationBarItem item){
+    return  Icon(
+      item.icon,
+      color: reverse ? widget.inactiveColor : activeColor,
+    );
+  }
+
+  Widget _buildText(TitledNavigationBarItem item){
+    return Text(item.title,
+      style: TextStyle(
+          color: reverse ? activeColor : widget.inactiveColor
+      ),
+    );
+  }
+
   Widget _buildItemWidget(TitledNavigationBarItem item, bool isSelected) {
     return Container(
       color: Colors.white,
@@ -108,15 +135,12 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
             opacity: isSelected ? 0.0 : 1.0,
             duration: duration,
             curve: Curves.linear,
-            child: Text(item.title),
+            child: reverse ? _buildIcon(item) : _buildText(item),
           ),
           AnimatedAlign(
             duration: duration,
             alignment: isSelected ? Alignment.center : Alignment(0, 2.6),
-            child: Icon(
-              item.icon,
-              color: widget.iconColor ?? widget.indicatorColor ?? Colors.black,
-            ),
+            child: reverse ? _buildText(item) : _buildIcon(item),
           ),
         ],
       ),
