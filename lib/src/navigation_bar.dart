@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:titled_navigation_bar/src/navigation_bar_item.dart';
+
+import 'navigation_bar_item.dart';
 
 class TitledBottomNavigationBar extends StatefulWidget {
   final bool reverse;
+  final Curve curve;
   final Color activeColor;
   final Color inactiveColor;
   final Color indicatorColor;
   final ValueChanged<int> onTap;
   final List<TitledNavigationBarItem> items;
 
-  TitledBottomNavigationBar(
-      {Key key,
-      this.reverse = false,
-      @required this.onTap,
-      @required this.items,
-      this.activeColor,
-      this.inactiveColor,
-      this.indicatorColor})
-      : super(key: key) {
+  TitledBottomNavigationBar({
+    Key key,
+    this.reverse = false,
+    this.curve = Curves.linear,
+    @required this.onTap,
+    @required this.items,
+    this.activeColor,
+    this.inactiveColor,
+    this.indicatorColor,
+  }) : super(key: key) {
     assert(items != null);
     assert(items.length >= 2 && items.length <= 5);
     assert(onTap != null);
@@ -33,6 +36,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
   static const double INDICATOR_HEIGHT = 2;
 
   bool get reverse => widget.reverse;
+  Curve get curve => widget.curve;
   List<TitledNavigationBarItem> get items => widget.items;
 
   double width = 0;
@@ -60,8 +64,11 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
       height: BAR_HEIGHT,
       width: width,
       decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)]),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(color: Colors.black12, blurRadius: 10),
+        ],
+      ),
       child: Stack(
         overflow: Overflow.visible,
         children: <Widget>[
@@ -85,7 +92,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
             width: width,
             child: AnimatedAlign(
               alignment: Alignment(indicatorAlignX, 0),
-              curve: Curves.linear,
+              curve: curve,
               duration: duration,
               child: Container(
                 color: widget.indicatorColor ?? activeColor,
@@ -130,7 +137,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
           AnimatedOpacity(
             opacity: isSelected ? 0.0 : 1.0,
             duration: duration,
-            curve: Curves.linear,
+            curve: curve,
             child: reverse ? _buildIcon(item) : _buildText(item),
           ),
           AnimatedAlign(
