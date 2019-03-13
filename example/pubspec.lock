@@ -131,9 +131,9 @@ packages:
   titled_navigation_bar:
     dependency: "direct main"
     description:
-      name: titled_navigation_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: ".."
+      relative: true
+    source: path
     version: "2.0.0"
   typed_data:
     dependency: transitive
