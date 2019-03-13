@@ -32,7 +32,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^2.0.0
+  titled_navigation_bar: ^2.1.0
 ```
 
 ### Import the package
@@ -62,6 +62,7 @@ bottomNavigationBar: TitledBottomNavigationBar(
 ### TitledBottomNavigationBar
 **onTap** - Use this to get notified when a item is clicked, you can retrieve the current item's index on this function. Should not be null!<br/>
 **items** - The items of your bottom navigation bar. Use the **TitledNavigationBarItem** class to add items. Should not be null!<br/>
+**curve** - Use this to define your custom curve animation. Should not be null!<br/>
 **reverse** - If true, the visible widget of the selected item will be the Text (with the title of the item). If false, the visible widget of the selected item will be the icon. Default to false<br/>
 **activeColor** - The active Text/Icon color. The default color is the indicatorColor of your app Theme.<br/>
 **inactiveColor** - The inactive Text/Icon color. The default is the black color.<br/>

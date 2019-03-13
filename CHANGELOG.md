@@ -1,3 +1,7 @@
+## 2.1.0
+
+* option define a custom curve animation
+
 ## 2.0.0
 
 * option to show title/icon on selected item (added reverse mode)
