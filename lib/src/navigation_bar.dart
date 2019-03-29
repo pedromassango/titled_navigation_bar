@@ -128,7 +128,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
 
   Widget _buildItemWidget(TitledNavigationBarItem item, bool isSelected) {
     return Container(
-      color: Colors.white,
+      color: item.backgroundColor,
       height: BAR_HEIGHT,
       width: width / items.length,
       child: Stack(
