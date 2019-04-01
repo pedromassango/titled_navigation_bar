@@ -37,7 +37,7 @@ dependencies:
 
 ### Import the package
 ```Dart
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 ```
 
 ### Adding the widget
