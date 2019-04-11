@@ -1,6 +1,10 @@
+## 2.2.0
+
+* option to define a custom item background color
+
 ## 2.1.0
 
-* option define a custom curve animation
+* option to define a custom curve animation
 
 ## 2.0.0
 

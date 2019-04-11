@@ -23,6 +23,7 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 - [x] Custom indicator color
 - [x] Support from two to five items
 - [x] Reverse mode (show selected item as icon or title)
+- [x] Option to define custom item background color
 
 ## Getting Started
 Follow these steps to use this library
@@ -32,7 +33,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^2.1.0
+  titled_navigation_bar: ^2.2.0
 ```
 
 ### Import the package
