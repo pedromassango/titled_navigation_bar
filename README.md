@@ -45,6 +45,7 @@ import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 
 ```Dart
 bottomNavigationBar: TitledBottomNavigationBar(
+  initialIndex: 0,
   onTap: (index){
     print("Selected Index: $index");
   },
