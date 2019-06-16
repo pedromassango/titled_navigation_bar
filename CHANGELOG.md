@@ -1,3 +1,7 @@
+## 3.0.0
+
+* added currentIndex property to updated the Bar by giving an index.
+
 ## 2.2.0
 
 * option to define a custom item background color

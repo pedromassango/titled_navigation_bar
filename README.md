@@ -24,6 +24,7 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 - [x] Support from two to five items
 - [x] Reverse mode (show selected item as icon or title)
 - [x] Option to define custom item background color
+- [x] Use currentIndex property to update the Bar giving a tab position
 
 ## Getting Started
 Follow these steps to use this library
@@ -33,7 +34,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^2.2.0
+  titled_navigation_bar: ^3.0.0
 ```
 
 ### Import the package
@@ -46,6 +47,7 @@ import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 ```Dart
 bottomNavigationBar: TitledBottomNavigationBar(
   initialIndex: 0,
+  currentIndex: 2, // Use this to update the Bar giving a position
   onTap: (index){
     print("Selected Index: $index");
   },
@@ -69,6 +71,7 @@ bottomNavigationBar: TitledBottomNavigationBar(
 **activeColor** - The active Text/Icon color. The default color is the indicatorColor of your app Theme.<br/>
 **inactiveColor** - The inactive Text/Icon color. The default is the black color.<br/>
 **indicatorColor** - The indicator color. The default color is the indicatorColor of your app Theme.<br/>
+**currentIndex** - Use this to update the Bar giving a position.<br/>
 
 ### TitledNavigationBarItem
 **icon** -The icon of this item. This will be used as default state if reverse mode is disabled<br/>
