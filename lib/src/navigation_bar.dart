@@ -28,6 +28,7 @@ class TitledBottomNavigationBar extends StatefulWidget {
     assert(items != null);
     assert(items.length >= 2 && items.length <= 5);
     assert(onTap != null);
+    assert(initialIndex != null);
   }
 
   @override
