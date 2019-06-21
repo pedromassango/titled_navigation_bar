@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'navigation_bar_item.dart';
 
+// ignore: must_be_immutable
 class TitledBottomNavigationBar extends StatefulWidget {
+
   final bool reverse;
   final Curve curve;
   final Color activeColor;
