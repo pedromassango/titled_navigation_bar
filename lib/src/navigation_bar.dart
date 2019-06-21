@@ -76,7 +76,6 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
       ),
       child: SafeArea(
         child: Container(
-          key: widget.key,
           height: BAR_HEIGHT,
           width: width,
           child: Stack(

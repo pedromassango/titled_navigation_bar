@@ -53,7 +53,6 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: TitledBottomNavigationBar(
         onTap: (index) => print("Selected Index: $index"),
         reverse: navBarMode,
-        currentIndex: 2,
         curve: Curves.easeInBack,
         items: items,
         activeColor: Colors.red,

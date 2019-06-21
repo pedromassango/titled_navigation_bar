@@ -1,3 +1,7 @@
+## 3.0.1
+
+* code improvements
+
 ## 3.0.0
 
 * added currentIndex property to updated the Bar by giving an index.

@@ -34,7 +34,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^3.0.0
+  titled_navigation_bar: ^3.0.1
 ```
 
 ### Import the package
