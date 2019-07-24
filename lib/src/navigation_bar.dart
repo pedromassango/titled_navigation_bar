@@ -10,6 +10,7 @@ class TitledBottomNavigationBar extends StatefulWidget {
   final Color activeColor;
   final Color inactiveColor;
   final Color indicatorColor;
+  @deprecated
   final int initialIndex;
   int currentIndex;
   final ValueChanged<int> onTap;
@@ -25,13 +26,12 @@ class TitledBottomNavigationBar extends StatefulWidget {
     this.inactiveColor,
     this.indicatorColor,
     this.initialIndex = 0,
-    this.currentIndex,
-  }) : super(key: key) {
-    assert(items != null);
-    assert(items.length >= 2 && items.length <= 5);
-    assert(onTap != null);
-    assert(initialIndex != null);
-  }
+    this.currentIndex = 0,
+  }) : assert(items != null),
+        assert(items.length >= 2 && items.length <= 5),
+        assert(onTap != null),
+        assert(currentIndex != null),
+        super(key: key);
 
   @override
   State createState() => _TitledBottomNavigationBarState();
@@ -52,9 +52,6 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
 
   @override
   void initState() {
-    // select a default item
-    widget.currentIndex = widget.currentIndex ?? widget.initialIndex;
-
     _select(widget.currentIndex);
 
     super.initState();
