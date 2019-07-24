@@ -4,7 +4,6 @@ import 'navigation_bar_item.dart';
 
 // ignore: must_be_immutable
 class TitledBottomNavigationBar extends StatefulWidget {
-
   final bool reverse;
   final Curve curve;
   final Color activeColor;
@@ -25,9 +24,9 @@ class TitledBottomNavigationBar extends StatefulWidget {
     this.activeColor,
     this.inactiveColor,
     this.indicatorColor,
-    this.initialIndex = 0,
+    @deprecated this.initialIndex = 0,
     this.currentIndex = 0,
-  }) : assert(items != null),
+  })  : assert(items != null),
         assert(items.length >= 2 && items.length <= 5),
         assert(onTap != null),
         assert(currentIndex != null),
@@ -43,7 +42,9 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
   static const double INDICATOR_HEIGHT = 2;
 
   bool get reverse => widget.reverse;
+
   Curve get curve => widget.curve;
+
   List<TitledNavigationBarItem> get items => widget.items;
 
   double width = 0;
@@ -57,7 +58,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
     super.initState();
   }
 
-  double _getIndicatorPosition(int index){
+  double _getIndicatorPosition(int index) {
     return (-1 + (2 / (items.length - 1) * index));
   }
 
@@ -88,7 +89,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
                     var index = items.indexOf(item);
                     return GestureDetector(
                       onTap: () => _select(index),
-                      child: _buildItemWidget(item, index == widget.currentIndex),
+                      child:
+                          _buildItemWidget(item, index == widget.currentIndex),
                     );
                   }).toList(),
                 ),
@@ -97,7 +99,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
                 top: 0,
                 width: width,
                 child: AnimatedAlign(
-                  alignment: Alignment( _getIndicatorPosition(widget.currentIndex), 0),
+                  alignment:
+                      Alignment(_getIndicatorPosition(widget.currentIndex), 0),
                   curve: curve,
                   duration: duration,
                   child: Container(

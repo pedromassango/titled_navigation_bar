@@ -1,3 +1,10 @@
+## 3.5.0
+
+* Removed initialIndex property. Use currentIndex instead
+* Improved animation duration
+* Fixed: on iPhone Devices (iPhone X Above) navigation bar is getting too low behind iPhone's floating bar at bottom
+* Fixed: Calling toDouble() on null
+
 ## 3.0.1
 
 * code improvements
