@@ -48,7 +48,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
 
   double width = 0;
   Color activeColor;
-  Duration duration = Duration(milliseconds: 250);
+  Duration duration = Duration(milliseconds: 270);
 
   @override
   void initState() {
