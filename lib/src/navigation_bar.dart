@@ -51,13 +51,6 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
   Color activeColor;
   Duration duration = Duration(milliseconds: 270);
 
-  @override
-  void initState() {
-    _select(widget.currentIndex);
-
-    super.initState();
-  }
-
   double _getIndicatorPosition(int index) {
     return (-1 + (2 / (items.length - 1) * index));
   }
