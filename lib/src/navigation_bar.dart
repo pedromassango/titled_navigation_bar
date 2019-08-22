@@ -8,6 +8,7 @@ class TitledBottomNavigationBar extends StatefulWidget {
   final Curve curve;
   final Color activeColor;
   final Color inactiveColor;
+  final Color inactiveStripColor;
   final Color indicatorColor;
   @deprecated
   final int initialIndex;
@@ -23,6 +24,7 @@ class TitledBottomNavigationBar extends StatefulWidget {
     @required this.items,
     this.activeColor,
     this.inactiveColor,
+    this.inactiveStripColor,
     this.indicatorColor,
     @deprecated this.initialIndex = 0,
     this.currentIndex = 0,
@@ -62,7 +64,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: widget.inactiveStripColor,
         boxShadow: [
           BoxShadow(color: Colors.black12, blurRadius: 10),
         ],
