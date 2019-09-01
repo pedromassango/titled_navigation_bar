@@ -9,8 +9,6 @@ class TitledBottomNavigationBar extends StatefulWidget {
   final Color activeColor;
   final Color inactiveColor;
   final Color indicatorColor;
-  @deprecated
-  final int initialIndex;
   int currentIndex;
   final ValueChanged<int> onTap;
   final List<TitledNavigationBarItem> items;
@@ -24,7 +22,6 @@ class TitledBottomNavigationBar extends StatefulWidget {
     this.activeColor,
     this.inactiveColor,
     this.indicatorColor,
-    @deprecated this.initialIndex = 0,
     this.currentIndex = 0,
   })  : assert(items != null),
         assert(items.length >= 2 && items.length <= 5),
@@ -36,8 +33,7 @@ class TitledBottomNavigationBar extends StatefulWidget {
   State createState() => _TitledBottomNavigationBarState();
 }
 
-class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
-    with SingleTickerProviderStateMixin {
+class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   static const double BAR_HEIGHT = 60;
   static const double INDICATOR_HEIGHT = 2;
 
@@ -58,9 +54,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
     super.initState();
   }
 
-  double _getIndicatorPosition(int index) {
-    return (-1 + (2 / (items.length - 1) * index));
-  }
+  double _getIndicatorPosition(int index) =>
+      (-1 + (2 / (items.length - 1) * index));
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +64,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.transparent,
         boxShadow: [
           BoxShadow(color: Colors.black12, blurRadius: 10),
         ],

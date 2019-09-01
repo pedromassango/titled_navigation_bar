@@ -1,3 +1,8 @@
+## 3.6.0
+
+* Removed white color bellow the indicator
+* Removed initialIndex property. Please use currentIndex instead
+
 ## 3.5.0
 
 * Removed initialIndex property. Use currentIndex instead
