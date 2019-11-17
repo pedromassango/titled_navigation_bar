@@ -1,3 +1,8 @@
+![Pub](https://img.shields.io/pub/v/titled_navigation_bar) <a href="https://github.com/Solido/awesome-flutter">
+   <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
+</a>
+
+
 # Titled Bottom Navigation Bar
 
 A beautiful, clean and simple bottom navigation bar with smooth animation on click. This package is high customizable, read more bellow for more details.
