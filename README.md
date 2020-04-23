@@ -40,7 +40,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^3.5.0
+  titled_navigation_bar: ^4.0.0
 ```
 
 ### Import the package
@@ -57,11 +57,11 @@ bottomNavigationBar: TitledBottomNavigationBar(
     print("Selected Index: $index");
   },
   items: [
-      TitledNavigationBarItem(title: 'Home', icon: Icons.home),
-      TitledNavigationBarItem(title: 'Search', icon: Icons.search),
-      TitledNavigationBarItem(title: 'Bag', icon: Icons.card_travel),
-      TitledNavigationBarItem(title: 'Orders', icon: Icons.shopping_cart),
-      TitledNavigationBarItem(title: 'Profile', icon: Icons.person_outline),
+      TitledNavigationBarItem(title: Text('Home'), icon: Icons.home),
+      TitledNavigationBarItem(title: Text('Search'), icon: Icons.search),
+      TitledNavigationBarItem(title: Text('Bag'), icon: Icons.card_travel),
+      TitledNavigationBarItem(title: Text('Orders'), icon: Icons.shopping_cart),
+      TitledNavigationBarItem(title: Text('Profile'), icon: Icons.person_outline),
   ]
 )
 ```

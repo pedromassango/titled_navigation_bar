@@ -122,8 +122,8 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   }
 
   Widget _buildText(TitledNavigationBarItem item) {
-    return Text(
-      item.title,
+    return DefaultTextStyle.merge(
+      child: item.title,
       style: TextStyle(color: reverse ? activeColor : widget.inactiveColor),
     );
   }
