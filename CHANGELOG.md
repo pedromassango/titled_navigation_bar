@@ -1,6 +1,6 @@
-## 3.7.0
+## 4.0.0
 
-* TitledNavigationBarItem title now can be any widget
+* TitledNavigationBarItem title can now be any widget
 
 
 ## 3.6.0
