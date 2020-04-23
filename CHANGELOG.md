@@ -1,3 +1,8 @@
+## 3.7.0
+
+* TitledNavigationBarItem title now can be any widget
+
+
 ## 3.6.0
 
 * Removed white color bellow the indicator
