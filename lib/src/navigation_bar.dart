@@ -64,44 +64,41 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
           BoxShadow(color: Colors.black12, blurRadius: 10),
         ],
       ),
-      child: SafeArea(
-        child: Container(
-          height: BAR_HEIGHT,
-          width: width,
-          child: Stack(
-            overflow: Overflow.visible,
-            children: <Widget>[
-              Positioned(
-                top: INDICATOR_HEIGHT,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: items.map((item) {
-                    var index = items.indexOf(item);
-                    return GestureDetector(
-                      onTap: () => _select(index),
-                      child:
-                          _buildItemWidget(item, index == widget.currentIndex),
-                    );
-                  }).toList(),
+      child: Container(
+        height: BAR_HEIGHT,
+        width: width,
+        child: Stack(
+          overflow: Overflow.visible,
+          children: <Widget>[
+            Positioned(
+              top: INDICATOR_HEIGHT,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: items.map((item) {
+                  var index = items.indexOf(item);
+                  return GestureDetector(
+                    onTap: () => _select(index),
+                    child: _buildItemWidget(item, index == widget.currentIndex),
+                  );
+                }).toList(),
+              ),
+            ),
+            Positioned(
+              top: 0,
+              width: width,
+              child: AnimatedAlign(
+                alignment:
+                    Alignment(_getIndicatorPosition(widget.currentIndex), 0),
+                curve: curve,
+                duration: duration,
+                child: Container(
+                  color: widget.indicatorColor ?? activeColor,
+                  width: width / items.length,
+                  height: INDICATOR_HEIGHT,
                 ),
               ),
-              Positioned(
-                top: 0,
-                width: width,
-                child: AnimatedAlign(
-                  alignment:
-                      Alignment(_getIndicatorPosition(widget.currentIndex), 0),
-                  curve: curve,
-                  duration: duration,
-                  child: Container(
-                    color: widget.indicatorColor ?? activeColor,
-                    width: width / items.length,
-                    height: INDICATOR_HEIGHT,
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
