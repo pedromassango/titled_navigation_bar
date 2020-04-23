@@ -10,6 +10,7 @@ class TitledBottomNavigationBar extends StatefulWidget {
   final Color inactiveColor;
   final Color inactiveStripColor;
   final Color indicatorColor;
+  final bool enableShadow;
   int currentIndex;
   final ValueChanged<int> onTap;
   final List<TitledNavigationBarItem> items;
@@ -24,11 +25,13 @@ class TitledBottomNavigationBar extends StatefulWidget {
     this.inactiveColor,
     this.inactiveStripColor,
     this.indicatorColor,
+    this.enableShadow = true,
     this.currentIndex = 0,
   })  : assert(items != null),
         assert(items.length >= 2 && items.length <= 5),
         assert(onTap != null),
         assert(currentIndex != null),
+        assert(enableShadow != null),
         super(key: key);
 
   @override
@@ -60,9 +63,11 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
     return Container(
       decoration: BoxDecoration(
         color: widget.inactiveStripColor,
-        boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 10),
-        ],
+        boxShadow: widget.enableShadow
+            ? [
+                BoxShadow(color: Colors.black12, blurRadius: 10),
+              ]
+            : null,
       ),
       child: Container(
         height: BAR_HEIGHT,

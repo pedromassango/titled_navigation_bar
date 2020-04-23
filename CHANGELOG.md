@@ -1,6 +1,7 @@
 ## 4.0.0
 
 * TitledNavigationBarItem title can now be any widget
+* Added `enableShadow` param to remove the builtin shadow.
 
 
 ## 3.6.0

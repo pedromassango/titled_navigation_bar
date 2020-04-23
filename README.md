@@ -69,7 +69,7 @@ bottomNavigationBar: TitledBottomNavigationBar(
 ## Customization (Optional)
 
 ### TitledBottomNavigationBar
-**onTap** - Use this to get notified when a item is clicked, you can retrieve the current item's index on this function. Should not be null!<br/>
+**onTap** - Use this to get notified when an item is clicked, you can retrieve the current item's index on this function. Should not be null!<br/>
 **items** - The items of your bottom navigation bar. Use the **TitledNavigationBarItem** class to add items. Should not be null!<br/>
 **curve** - Use this to define your custom curve animation. Should not be null!<br/>
 **reverse** - If true, the visible widget of the selected item will be the Text (with the title of the item). If false, the visible widget of the selected item will be the icon. Default to false<br/>
@@ -77,6 +77,7 @@ bottomNavigationBar: TitledBottomNavigationBar(
 **inactiveColor** - The inactive Text/Icon color. The default is the black color.<br/>
 **indicatorColor** - The indicator color. The default color is the indicatorColor of your app Theme.<br/>
 **currentIndex** - Use this to update the Bar giving a position.<br/>
+**enableShadow** - Use this to remove the NavigationBar's shadow<br/>
 
 ### TitledNavigationBarItem
 **icon** -The icon of this item. This will be used as default state if reverse mode is disabled<br/>

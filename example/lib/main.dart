@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 
 void main() => runApp(MyApp());
