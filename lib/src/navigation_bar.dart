@@ -1,3 +1,5 @@
+import 'dart:ui' show lerpDouble;
+
 import 'package:flutter/material.dart';
 
 import 'navigation_bar_item.dart';
@@ -52,8 +54,13 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   Color activeColor;
   Duration duration = Duration(milliseconds: 270);
 
-  double _getIndicatorPosition(int index) =>
-      (-1 + (2 / (items.length - 1) * index));
+  double _getIndicatorPosition(int index) {
+    var isLtr = Directionality.of(context) == TextDirection.ltr;
+    if (isLtr)
+      return lerpDouble(-1.0, 1.0, index / (items.length - 1));
+    else
+      return lerpDouble(1.0, -1.0, index / (items.length - 1));
+  }
 
   @override
   Widget build(BuildContext context) {
