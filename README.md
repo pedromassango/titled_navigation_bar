@@ -31,6 +31,7 @@ You can see the source code of this lib inside the [/lib](https://github.com/ped
 - [x] Option to define custom item background color
 - [x] Use currentIndex property to update the Bar giving a tab position
 - [x] No need setState(...) to update the current index
+- [x] Support RTL TextDirection (thanks to [Victor Uvarov](https://github.com/VictorUvarov))
 
 ## Getting Started
 Follow these steps to use this library
@@ -40,7 +41,7 @@ Follow these steps to use this library
 ```yaml
 dependencies:
   ...
-  titled_navigation_bar: ^4.0.0
+  titled_navigation_bar: ^4.1.0
 ```
 
 ### Import the package

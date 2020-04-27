@@ -1,3 +1,7 @@
+## 4.1.0
+
+* Added support RTL TextDirection. See (#22)
+
 ## 4.0.0
 
 * TitledNavigationBarItem title can now be any widget
