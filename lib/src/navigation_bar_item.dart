@@ -6,8 +6,8 @@ class TitledNavigationBarItem {
   final Color backgroundColor;
 
   TitledNavigationBarItem({
-    @required this.icon,
-    @required this.title,
+    required this.icon,
+    required this.title,
     this.backgroundColor = Colors.white,
   });
 }

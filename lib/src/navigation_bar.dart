@@ -8,32 +8,28 @@ import 'navigation_bar_item.dart';
 class TitledBottomNavigationBar extends StatefulWidget {
   final bool reverse;
   final Curve curve;
-  final Color activeColor;
-  final Color inactiveColor;
-  final Color inactiveStripColor;
-  final Color indicatorColor;
+  final Color? activeColor;
+  final Color? inactiveColor;
+  final Color? inactiveStripColor;
+  final Color? indicatorColor;
   final bool enableShadow;
   int currentIndex;
   final ValueChanged<int> onTap;
   final List<TitledNavigationBarItem> items;
 
   TitledBottomNavigationBar({
-    Key key,
+    Key? key,
     this.reverse = false,
     this.curve = Curves.linear,
-    @required this.onTap,
-    @required this.items,
+    required this.onTap,
+    required this.items,
     this.activeColor,
     this.inactiveColor,
     this.inactiveStripColor,
     this.indicatorColor,
     this.enableShadow = true,
     this.currentIndex = 0,
-  })  : assert(items != null),
-        assert(items.length >= 2 && items.length <= 5),
-        assert(onTap != null),
-        assert(currentIndex != null),
-        assert(enableShadow != null),
+  })  : assert(items.length >= 2 && items.length <= 5),
         super(key: key);
 
   @override
@@ -51,15 +47,15 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   List<TitledNavigationBarItem> get items => widget.items;
 
   double width = 0;
-  Color activeColor;
+  Color? activeColor;
   Duration duration = Duration(milliseconds: 270);
 
   double _getIndicatorPosition(int index) {
     var isLtr = Directionality.of(context) == TextDirection.ltr;
     if (isLtr)
-      return lerpDouble(-1.0, 1.0, index / (items.length - 1));
+      return lerpDouble(-1.0, 1.0, index / (items.length - 1))!;
     else
-      return lerpDouble(1.0, -1.0, index / (items.length - 1));
+      return lerpDouble(1.0, -1.0, index / (items.length - 1))!;
   }
 
   @override
@@ -79,7 +75,6 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
             : null,
       ),
       child: Stack(
-        overflow: Overflow.visible,
         children: <Widget>[
           Positioned(
             top: INDICATOR_HEIGHT,

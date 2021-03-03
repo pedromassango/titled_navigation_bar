@@ -1,3 +1,8 @@
+
+## 5.0.0-nullsafety.0
+
+* Null Safety support
+
 ## 4.1.0
 
 * Added support RTL TextDirection. See (#22)
