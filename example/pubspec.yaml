@@ -11,7 +11,7 @@ dependencies:
 
   titled_navigation_bar:
 
-dependencies_overrides:
+dependency_overrides:
   titled_navigation_bar:
     path: ../
 

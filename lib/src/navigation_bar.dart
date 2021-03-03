@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 
 import 'navigation_bar_item.dart';
 
+const double DEFAULT_BAR_HEIGHT = 60;
+
+const double DEFAULT_INDICATOR_HEIGHT = 2;
+
+
 // ignore: must_be_immutable
 class TitledBottomNavigationBar extends StatefulWidget {
   final bool reverse;
@@ -14,8 +19,26 @@ class TitledBottomNavigationBar extends StatefulWidget {
   final Color? indicatorColor;
   final bool enableShadow;
   int currentIndex;
+
+  /// Called when a item is tapped.
+  ///
+  /// This provide the selected item's index.
   final ValueChanged<int> onTap;
+
+  /// The items of this navigation bar.
+  ///
+  /// This should contain at least two items and five at most.
   final List<TitledNavigationBarItem> items;
+
+  /// The selected item is indicator height.
+  ///
+  /// Defaults to [DEFAULT_INDICATOR_HEIGHT].
+  final double indicatorHeight;
+
+  /// Change the navigation bar's size.
+  ///
+  /// Defaults to [DEFAULT_BAR_HEIGHT].
+  final double height;
 
   TitledBottomNavigationBar({
     Key? key,
@@ -29,6 +52,8 @@ class TitledBottomNavigationBar extends StatefulWidget {
     this.indicatorColor,
     this.enableShadow = true,
     this.currentIndex = 0,
+    this.height = DEFAULT_BAR_HEIGHT,
+    this.indicatorHeight = DEFAULT_INDICATOR_HEIGHT,
   })  : assert(items.length >= 2 && items.length <= 5),
         super(key: key);
 
@@ -37,8 +62,6 @@ class TitledBottomNavigationBar extends StatefulWidget {
 }
 
 class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
-  static const double BAR_HEIGHT = 60;
-  static const double INDICATOR_HEIGHT = 2;
 
   bool get reverse => widget.reverse;
 
@@ -64,7 +87,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
     activeColor = widget.activeColor ?? Theme.of(context).indicatorColor;
 
     return Container(
-      height: BAR_HEIGHT + MediaQuery.of(context).viewPadding.bottom,
+      height: widget.height + MediaQuery.of(context).viewPadding.bottom,
       width: width,
       decoration: BoxDecoration(
         color: widget.inactiveStripColor ?? Theme.of(context).cardColor,
@@ -77,7 +100,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
       child: Stack(
         children: <Widget>[
           Positioned(
-            top: INDICATOR_HEIGHT,
+            top: widget.indicatorHeight,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: items.map((item) {
@@ -100,7 +123,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
               child: Container(
                 color: widget.indicatorColor ?? activeColor,
                 width: width / items.length,
-                height: INDICATOR_HEIGHT,
+                height: widget.indicatorHeight,
               ),
             ),
           ),
@@ -109,7 +132,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
     );
   }
 
-  _select(int index) {
+  void _select(int index) {
     widget.currentIndex = index;
     widget.onTap(widget.currentIndex);
 
@@ -117,9 +140,11 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   }
 
   Widget _buildIcon(TitledNavigationBarItem item) {
-    return Icon(
-      item.icon,
-      color: reverse ? widget.inactiveColor : activeColor,
+    return IconTheme(
+      data: IconThemeData(
+        color: reverse ? widget.inactiveColor : activeColor,
+      ),
+      child: item.icon,
     );
   }
 
@@ -133,7 +158,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   Widget _buildItemWidget(TitledNavigationBarItem item, bool isSelected) {
     return Container(
       color: item.backgroundColor,
-      height: BAR_HEIGHT,
+      height: widget.height,
       width: width / items.length,
       child: Stack(
         alignment: AlignmentDirectional.center,
