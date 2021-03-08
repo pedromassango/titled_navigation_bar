@@ -1,3 +1,11 @@
+
+## 5.0.0-nullsafety.0
+
+* Null Safety support
+* [breaking change] TitledNavigationBarItem.icon is now of type Widget rather than IconData.
+* Added TitledBottomNavigationBar.height
+* Added TitledBottomNavigationBar.indicatorHeight
+
 ## 4.1.0
 
 * Added support RTL TextDirection. See (#22)

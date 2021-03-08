@@ -20,11 +20,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<TitledNavigationBarItem> items = [
-    TitledNavigationBarItem(title: Text('Home'), icon: Icons.home),
-    TitledNavigationBarItem(title: Text('Search'), icon: Icons.search),
-    TitledNavigationBarItem(title: Text('Bag'), icon: Icons.card_travel),
-    TitledNavigationBarItem(title: Text('Orders'), icon: Icons.shopping_cart),
-    TitledNavigationBarItem(title: Text('Profile'), icon: Icons.person_outline),
+    TitledNavigationBarItem(title: Text('Home'), icon: Icon(Icons.home)),
+    TitledNavigationBarItem(title: Text('Search'), icon: Icon(Icons.search)),
+    TitledNavigationBarItem(title: Text('Bag'), icon: Icon(Icons.card_travel)),
+    TitledNavigationBarItem(title: Text('Orders'), icon: Icon(Icons.shopping_cart)),
+    TitledNavigationBarItem(title: Text('Profile'), icon: Icon(Icons.person_outline)),
   ];
 
   bool navBarMode = false;
@@ -50,6 +50,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: TitledBottomNavigationBar(
+        height: 60,
+        indicatorHeight: 2,
         onTap: (index) => print("Selected Index: $index"),
         reverse: navBarMode,
         curve: Curves.easeInBack,
