@@ -1,7 +1,6 @@
-![Pub](https://img.shields.io/pub/v/titled_navigation_bar) <a href="https://github.com/Solido/awesome-flutter">
+[![Pub](https://img.shields.io/pub/v/titled_navigation_bar)](https://pub.dev/packages/titled_navigation_bar)<a href="https://github.com/Solido/awesome-flutter">
    <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
 </a>
-
 
 # Titled Bottom Navigation Bar
 
